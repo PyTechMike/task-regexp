@@ -1,0 +1,19 @@
+{
+  "name": "task-regexp",
+  "version": "1.0.0",
+  "description": "1. Написать функцию для валидации пароля. Единственным входящим аргументом будет строка пароля. В случае правильного пароля должно возвращаться `true`, в случае не правильного должно выкидываться исключение с ошибкой, что именно не правильно. Требования к паролю:     - минимум 10 символов в длину     - минимум 1 символ в нижнем регистре     - минимум 1 символ в верхнем регистре     - минимум одна цифра     - минимум один специальный символ: `!@#$%^&*()-_=+{};:,<.>?`     - не более 2 подряд идущих повторяющихся символов",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PyTechMike/task-regexp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PyTechMike/task-regexp/issues"
+  },
+  "homepage": "https://github.com/PyTechMike/task-regexp#readme"
+}
