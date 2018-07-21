@@ -1,8 +1,9 @@
 function isTenSymbols(password) {
-	if(password.length >= 10) {
+	var reg = '.{10}';
+	if(password.match(reg)) {
 		return true;
 	} else {
-		throw 'Password must consist of at least 10 symbols';
+		throw new Error('Password must consist of at least 10 symbols');
 	}
 }
 
@@ -11,7 +12,7 @@ function isOneUppercase(password) {
 	if(password.match(reg)) {
 		return true;
 	} else {
-		throw 'There isn`t any uppercase symbol((((';
+		throw new Error('There isn`t any uppercase symbol((((');
 	}
 }
 
@@ -20,7 +21,7 @@ function isOneLowercase(password) {
 	if(password.match(reg)) {
 		return true;
 	} else {
-		throw 'There isn`t any lowercase symbol((((';
+		throw new Error('There isn`t any lowercase symbol((((');
 	}
 }
 
@@ -30,7 +31,7 @@ function isOneNumber(password) {
 	if(password.match(reg)) {
 		return true;
 	} else {
-		throw 'There isn`t any number((((';
+		throw new Error('There isn`t any number((((');
 	}
 }
 
@@ -39,7 +40,7 @@ function isOneSpecial(password, specialSymbols) {
 	if(password.match(reg)) {
 		return true;
 	} else {
-		throw 'There isn`t any special symbol( !@#$%^&*()-_=+{};:,<.>? )';
+		throw new Error('There isn`t any special symbol( !@#$%^&*()-_=+{};:,<.>? )');
 	}
 }
 
@@ -55,7 +56,7 @@ function isNoRepeatedMoreThan(password, times) {
 	if(!password.match(reg)) {
 		return true;
 	} else {
-		var errorMessage = 'There are more than ' + times + ' symbols in a row(((('; 
+		var errorMessage = new Error('There are more than ' + times + ' symbols in a row(((('); 
 		throw errorMessage;
 	}
 }
@@ -68,7 +69,8 @@ function checkPassword(password) {
 	isOneNumber(password);
 	isOneSpecial(password, `!@#$%^&*()-_=+{};:,<.>?`);
 	isNoRepeatedMoreThan(password, 2);
+	return true;
 }
 
-checkPassword('gffes5#grdrgsE');
+checkPassword('gffes5#grdrgsE')
 
